@@ -1,10 +1,11 @@
 import { useState,useEffect } from "react";
 import "./App.css";
+import API_KEY from "./gitignore/API_KEY";
 import axios from "axios";
 
 
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid='
-const API_key = '7746b2d19ee7b590c3eb4081ef1bb325'
+const API_key = API_KEY;
 
 function App() {
 
