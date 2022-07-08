@@ -2,9 +2,11 @@ import React, { useState,useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 
+import Header from "./components/Header";
 
-const baseURL = "https://api.openweathermap.org/data/2.5/weather?q=London&appid="
-// const API_KEY = process.env.REACT_APP_API_KEY
+const city = "Miami"
+const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`
+const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
 
 function App() {
 
@@ -26,7 +28,7 @@ function App() {
 
   useEffect(()=>{
     axios
-    .get(`${baseURL}${API_KEY}`)
+    .get(`${baseURL}${REACT_APP_API_KEY}`)
     .then((response)=>{
       setHumidity(response.data.main.humidity)
       setPressure(response.data.main.pressure)
@@ -47,9 +49,10 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App bg-slate-400">
+      <Header />
+      <div className="flex justify-center content-center">
       <h1 class="text-3xl font-bold">Weather app!!</h1>
-      <div>
         <ul>
           <li>Temperature: {temp}</li>
           <li>Humidity: {humidity}</li>
