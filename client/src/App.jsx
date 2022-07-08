@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App bg-slate-400">
       <Header />
-      <div className="flex justify-center content-center">
+      <div className="container flex justify-center content-center">
       <h1 class="text-3xl font-bold">Weather app!!</h1>
         <ul>
           <li>Temperature: {temp}</li>
@@ -65,7 +65,7 @@ function App() {
           <li>City: {city}</li>
           <li>Country: {country}</li>
         </ul>
-        <img src=""/>
+        <img src='http://openweathermap.org/img/wn/01d@2x.png'/>
       </div>
     </div>
   );
